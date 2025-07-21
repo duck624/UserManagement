@@ -27,7 +27,7 @@ public class SearchRepository {
     private EntityManager entityManager;
 
     public PageResponse<?> getAllUsersWithSearch(int pageNo, int pageSize, String sortBy, Sort.Direction direction, String search) {
-        StringBuilder sqlQuery = new StringBuilder("select new vn.tayjava.dto.response.UserDetailResponse(u.id id, u.firstName firstName, u.lastName lastName, u.email email, u.phone phone) from User u where 1=1");
+        StringBuilder sqlQuery = new StringBuilder("select new vn.ducjava.dto.response.UserDetailResponse(u.id id, u.firstName firstName, u.lastName lastName, u.email email, u.phone phone) from User u where 1=1");
         if(StringUtils.hasLength(search)) {
             sqlQuery.append("and lower(u.firstName) like lower(:firstName)");
             sqlQuery.append("or lower(u.lastName) like lower(:lastName)");

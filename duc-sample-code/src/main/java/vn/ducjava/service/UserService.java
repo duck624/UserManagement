@@ -14,7 +14,7 @@ public interface UserService {
 
     void changeStatus(long userId, UserStatus status) throws ResourceNotFoundException;
 
-    void deleteUser(long userId);
+    void deleteUser(long userId) throws ResourceNotFoundException;
 
     UserDetailResponse getUser(long userId) throws ResourceNotFoundException;
 

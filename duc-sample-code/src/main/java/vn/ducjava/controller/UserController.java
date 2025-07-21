@@ -119,7 +119,7 @@ public class UserController {
             @RequestParam(defaultValue = "0") int pageNo,
             @Min(10) @RequestParam(defaultValue = "20") int pageSize,
             @RequestParam(required = false) String sortBy,
-            @RequestParam(required = false)  Sort.Direction direction,
+            @RequestParam(required = false) Sort.Direction direction,
             @RequestParam(required = false) String search) {
         log.info("Request get user list and search");
         return new ResponseData<>(HttpStatus.OK.value(), "Get list users", userService.getAllUsersWithSearch(pageNo, pageSize, sortBy, direction, search));

@@ -92,9 +92,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(long userId) {
-        userRepository.deleteById(userId);
-        log.info("User deleted, userId={}", userId);
+    public void deleteUser(long userId) throws ResourceNotFoundException {
+        if (getUserById(userId) != null) {
+            userRepository.deleteById(userId);
+            log.info("User deleted, userId={}", userId);
+        }
     }
 
     @Override
